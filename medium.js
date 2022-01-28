@@ -10,3 +10,13 @@ Example 2:
 Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1.
 */
+
+const nums = [4,5,6,7,0,1,2]
+
+function sum(arr, num) {
+    for(let i = 0; i < arr.length; i++) {
+        arr.indexOf(i);
+    }
+    return (arr.indexOf(num));
+}
+console.log(sum(nums, 0));
