@@ -7,14 +7,14 @@ Input: [1.5, 3, 2.5, 1]  Output: 2
 */
 
 const num = [1,4,7]
-let sum = 0;
+let total = 0;
 let avg = 0;
 
 function calculateAvg(arr) {
     for(let i = 0; i < arr.length; i++) {
-        sum += arr[i];
+        total += arr[i];
     }
-    return avg = sum / arr.length;
+    return avg = total / arr.length;
 }
 
 console.log(calculateAvg(num));
