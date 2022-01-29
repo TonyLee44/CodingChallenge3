@@ -11,3 +11,18 @@ Output: -1
 
 Note: You may assume that you have an infinite number of each kind of coin.
 */
+
+const input = [1,2,5]
+let amount = 11;
+let coins = 0;
+
+function compute (arr) {
+    for(let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] <= amount) {
+            amount -= arr[i];
+            coins++;
+        }
+    }
+}
+compute(input);
+console.log(coins);
