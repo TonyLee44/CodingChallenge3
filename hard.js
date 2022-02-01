@@ -10,7 +10,3 @@ document.querySelector('.click-example').addEventListener('click', function () {
 document.querySelector('.click-example2').addEventListener('click', function () {
     document.getElementById("change").style.backgroundColor = "white";
 });
-
-window.updateTheBackground = function(className) {
-    
-}

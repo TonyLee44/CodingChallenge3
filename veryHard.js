@@ -13,16 +13,33 @@ Note: You may assume that you have an infinite number of each kind of coin.
 */
 
 const input = [1,2,5]
-let amount = 11;
-let coins = 0;
 
-function compute (arr) {
-    for(let i = arr.length - 1; i >= 0; i--) {
-        if (arr[i] <= amount) {
-            amount -= arr[i];
-            coins++;
+function compute(arr, amount) {
+    sortedArr = arr.sort(function (a, b) {
+        return b - a;
+    });
+    let coins = 0;
+    let tempAmount = amount;
+
+    while (sortedArr.length != 0) {
+        for (let i = 0; i < sortedArr.length; i++) {
+            while (sortedArr[i] <= tempAmount) {
+                tempAmount -= sortedArr[i];
+
+                coins++;
+            }
         }
+
+        if (tempAmount === 0) {
+            return coins;
+        }
+            sortedArr.shift();
+            coins = 0;
+            tempAmount = amount;
+    }
+    if (sortedArr.length === 0) {
+        return -1;
     }
 }
-compute(input);
-console.log(coins);
+
+console.log("Final Output: ", compute(input, 11));
